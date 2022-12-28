@@ -1,0 +1,53 @@
+---
+import PageLayout from "@/layouts/Base";
+// import { Image } from "@astrojs/image/components";
+// import aboutImg from "../assets/about-astro.png";
+
+const meta = {
+	title: "About",
+	description: "I'm a starter theme for Astro.build",
+};
+---
+
+<PageLayout meta={meta}>
+	<div class="space-y-6">
+		<h1
+			class="title mb-6 font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-900 to-fuchsia-500 dark:from-cyan-400"
+			style="font-family: 'Plus Jakarta Sans';"
+		>
+			About
+		</h1>
+		<div class="flex justify-center">
+			<img
+				class="flex justify-center"
+				width="250"
+				height="250"
+				style="border-radius: 0.5%;"
+				src="../public/my-image.jpg"
+			/>
+		</div>
+
+		<p>Hi, I'm Arnav Raina.</p>
+		<p>I'm a 2nd year CS student at Shri Mata Vaishno Devi University, J&K, India.</p>
+		<p>
+			I'm an open-source enthusiast and a Machine Learning developer. My main hobby includes peeling
+			out useful insights from data and then blending them enough with machine learning algos until
+			they yield a good mixture for the foreseeable future.
+		</p>
+		<p>Well, I got a bit poetic, isn't? 😋</p>
+		<p class="text-base font-extrabold">🚀 <span class="underline">Achievements</span></p>
+		<ul class="list-inside list-disc">
+			<li>3x <span class="text-sky-500">Kaggle</span> Expert</li>
+			<li>Contributor @<span class="text-orange-500">Tensorflow</span></li>
+			<li>
+				5th rank worldwide in <span class="text-sky-500">Kaggle</span> Autism Prediction Challenge
+			</li>
+		</ul>
+		<p class="text-base font-extrabold">⚡ <span class="underline">Work experience</span></p>
+		<ul class="list-inside list-disc">
+			<li><span class="font-bold">Microsoft Learn Student Ambassador</span>, Oct 2022</li>
+			<li><span class="font-bold">Internship - The Sparks Foundation</span>, Sep 2022</li>
+			<li><span class="font-bold">GirlScript Summer of Code 2022 Participant</span>, Mar 2022</li>
+		</ul>
+	</div>
+</PageLayout>

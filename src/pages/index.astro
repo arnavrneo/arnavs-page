@@ -1,0 +1,77 @@
+---
+import PageLayout from "@/layouts/Base";
+import PostPreview from "@/components/blog/PostPreview";
+import SocialList from "@/components/SocialList";
+import { sortMDByDate } from "@/utils";
+import type { Post } from "@/data/posts";
+import "@fontsource/plus-jakarta-sans";
+
+const MAX_POSTS = 10;
+const allPosts = await Astro.glob<Post>("./posts/*.mdx");
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+---
+
+<PageLayout meta={{ title: "Home" }}>
+	<section>
+		<h1
+			class="title mb-6 font-extrabold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-blue-900 to-fuchsia-500 dark:from-cyan-400"
+			style="font-family: 'Plus Jakarta Sans';"
+		>
+			Hi! I'm Arnav.
+		</h1>
+		<p class="mb-4">A second-year CS student.</p>
+		<p class="mb-4">I'm a Machine Learning and Python developer.</p>
+		<p class="mb-4">Welcome to my blog!</p>
+		<SocialList />
+	</section>
+	<section aria-label="Blog post list" class="mt-16">
+		<h2 class="title mb-4 text-xl">Posts</h2>
+		<ul class="space-y-4 sm:space-y-2">
+			{
+				allPostsByDate.map((p) => (
+					<li class="flex flex-wrap items-center gap-x-2 [&_q]:w-full">
+						<PostPreview post={p} as="h2" />
+					</li>
+				))
+			}
+		</ul>
+	</section>
+	<section class="mt-16">
+		<h2 class="title mb-4 text-xl">Interests</h2>
+		<ul class="space-y-4 sm:space-y-2">
+			<li>
+				<a target="_blank" rel="noopener noreferrer" class="cactus-link inline-block">Python</a>
+				<p class="inline-block sm:mt-2"></p>
+			</li>
+			<li>
+				<a target="_blank" rel="noopener noreferrer" class="cactus-link inline-block"
+					>Machine Learning
+				</a>
+				<p class="inline-block sm:mt-2"></p>
+			</li>
+			<li>
+				<a target="_blank" rel="noopener noreferrer" class="cactus-link inline-block"
+					>Data Science
+				</a>
+				<p class="inline-block sm:mt-2"></p>
+			</li>
+			<li>
+				<a target="_blank" rel="noopener noreferrer" class="flex flex-row inline-block">
+					Music&nbsp;
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						style="fill: var(--theme-accent)"
+						viewBox="0 0 24 24"
+						style="transform: ;msFilter:;"
+						><path
+							d="m19.684 5.821-9-3.272A1.998 1.998 0 0 0 8 4.428v6.129A3.953 3.953 0 0 0 6 10c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4V4.428L19 7.7v6.856A3.962 3.962 0 0 0 17 14c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4V7.7c0-.838-.529-1.594-1.316-1.879zM6 16c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zm11 4c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"
+						></path>
+					</svg>
+				</a>
+				<p class="inline-block sm:mt-2"></p>
+			</li>
+		</ul>
+	</section>
+</PageLayout>
