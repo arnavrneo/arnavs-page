@@ -10,14 +10,12 @@ const meta = {
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-6">404 | Oops something went wrong</h1>
+	<h1
+		class="title mb-6 font-extrabold text-transparent text-2xl bg-clip-text bg-gradient-to-r from-blue-900 to-fuchsia-500 dark:from-cyan-400"
+		style="font-family: 'Plus Jakarta Sans';"
+	>
+		404 | Oops! something went wrong.
+	</h1>
 	<p class="mb-8">Please use the navigation to find your way back</p>
-	<div class="my-4 grid justify-center">
-		<Image
-			class="rotate-180"
-			src={aboutImg}
-			alt="A cartoon cactus looking at the 'Astro.build' logo"
-			loading="eager"
-		/>
-	</div>
+	<div class="my-4 grid justify-center"></div>
 </PageLayout>

@@ -1,0 +1,107 @@
+---
+layout: "@/layouts/BlogPost"
+title: About ML
+publishDate: 29 Dec 2022
+description: Info about my upcoming post
+tags: ["about-ml"]
+---
+
+import { Image } from "@astrojs/image/components";
+
+## Intro
+
+> Machine Learning is the science (and art) of programming computers so they can learn from data.
+
+Or in a more engineered-way:
+
+> A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T,
+> as measured by P, improves with experience E.
+
+> By Tom Mitchell, 1997
+
+## Types of ML
+
+Machine Learning works on maths. Ranging from the very basic to the very complex.
+
+There are various types of Machine Learning algorithms.
+Let's start with the Supervised Learning.
+
+### Supervised Learning
+
+In this type of learning, you provide questions along with their answers to the machine.
+Then, the machine first looks at the question and then at the answer and then tries to understand the relationship between them.
+The question and the answer forms the training data. Sufficient amount of training data enables the machine or
+algorithm to understand the relationship between the data and its solution.
+
+Now, if you just feed a new question to the machine (related to the data initially the machine was trained upon; don't
+expect it to run if you didn't tell it how to walk 🙂),
+it will try to predict its solution based on its understanding of the training data.
+
+Supervised learning involves many alogs:
+
+- Regression
+- Classification
+- k-Nearest Neighbors
+- Support Vector Machines (SVMs)
+- Decision Tree and Random Forests 🌲🌳
+- and the most popular: Neural Networks 🚀🚀 (they may or may not be supervised)
+
+<h5> Example: </h5>
+
+The most famous example: Predicting house prices given some info about the house falls under supervised
+learning (Regression).
+
+### Unsupervised Learning
+
+Now suppose that you don't provide the machine with the solutions. Instead you just provide it with the data,
+and say to it, "Learn it yourself!". And that's it. It's a learn-it-yourself approach. The system tries to learn without a teacher
+or a solution. It tries to find the patterns and works out on its own.
+
+It involves:
+
+- Clustering
+
+  - k-Means
+  - Hierarchical Clustering Analysis (HCA)
+  - Expectation Maximization
+
+- Visualiztion and dimensionality reduction
+  - Prinicipal Component Analysis (PCA)
+  - Kernel PCA
+  - t-distributed Stochastic Neighbor Embedding (t-SNE)
+
+<h5> Example: </h5>
+
+Say you have a lot of supermarket data. You can run Unsupervised algorithm to
+discover interesting relationships. Like you may find that people who buy Item A tend to buy Item B too.
+So, you may want to place Item B close to Item A.
+
+### Semi-supervised Learning
+
+This is the mid-way between the previous algorithms.
+Just train your machine on a lot of unlabelled data and a little bit of labelled data.
+
+<h5> Example: </h5>
+
+Take Google Photos for example. It automatically recognizes same faces in different photos without you telling it.
+After it recognizes that these persons appear in these many photos, you just need to tell it who those persons are, just one label per person and it
+will automatically be able to name everyone in every photo. Useful for searching, eh?
+
+### Reinforcement Learning
+
+It's a totally different thing.
+Think of an agent (can be anything) that observes the environment, selects and performs actions
+and get rewards in return or penalties in the form of negative rewards. It must learn by itself what is the
+best way (called policy) to get most rewards over time.
+
+<h5> Example: </h5>
+
+Suppose you have a robot. And you have water on one side and fire on other side. Now, the robot moves and observes it's
+environment. Then, it performs an action using a strategy. Say, if it moved towards fire (and fire is said to cause problem 🙂),
+it may get damaged. It gets a negative reward for getting near fire. So, next time it will try to not go near fire so that it can
+maximize it's reward.
+
+---
+
+So, this is the basic overview of ML.
+You give data to the machine, train it on the data and then make predictions or other insightful decisions.
